@@ -1,0 +1,9 @@
+---
+# tasks file for waal70.kiwix
+- name: "Include role to deploy to Portainer"
+  ansible.builtin.include_role:
+    name: waal70.portainer
+  vars:
+    stack_list:
+      - name: kiwix
+        file: kiwix.yml # file is in files/ of this role
