@@ -4,6 +4,8 @@ services:
         container_name: kiwix
         volumes:
             - /media/kiwix:/data
+        ports:
+            - "8081:8080"
         command:
             '*.zim'
         restart: unless-stopped
