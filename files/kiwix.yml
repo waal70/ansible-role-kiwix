@@ -1,15 +1,15 @@
 services:
-    kiwix-serve:
-        image: ghcr.io/kiwix/kiwix-serve:latest
-        container_name: kiwix
-        volumes:
-            - /media/kiwix:/data
-        ports:
-            - "8081:8080"
-        command:
-            '*.zim'
-        restart: unless-stopped
+  kiwix-serve:
+    image: ghcr.io/kiwix/kiwix-serve:latest
+    container_name: kiwix
+    volumes:
+      - /media/kiwix:/data
+    ports:
+      - 8080:8080
+    command:
+      '*.zim'
+    restart: unless-stopped
 networks:
-    default:
-        external: true
-        name: reverse-proxy
+  default:
+    external: true
+    name: reverse-proxy
